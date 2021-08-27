@@ -12,8 +12,6 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.skanderjabouzi.rvezytest.databinding.FragmentBreedsBinding
 import com.skanderjabouzi.rvezytest.model.Breed
-import com.skanderjabouzi.rvezytest.model.BreedItem
-import com.skanderjabouzi.rvezytest.model.BreedX
 import com.skanderjabouzi.rvezytest.network.CatRepository
 
 class BreedsFragment : Fragment() {
@@ -37,12 +35,11 @@ class BreedsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         GridLayoutManager(
-            requireContext(), // context
-            3, // span count
-            RecyclerView.VERTICAL, // orientation
-            false // reverse layout
+            requireContext(),
+            3,
+            RecyclerView.VERTICAL,
+            false
         ).apply {
-            // specify the layout manager for recycler view
             binding?.reposList?.layoutManager = this
         }
         binding?.reposList?.adapter = adapter
